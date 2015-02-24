@@ -92,7 +92,7 @@ CARDSDIR=${PRODHOME}/${carddir}
 
 MGBASEDIR=mgbasedir
 
-MG=MG5_aMC_v2.2.2.tar.gz
+MG=MG5_aMC_v2.2.3.tar.gz
 MGSOURCE=https://cms-project-generators.web.cern.ch/cms-project-generators/$MG
 
 #syscalc is a helper tool for madgraph to add scale and pdf variation weights for LO processes
@@ -105,7 +105,7 @@ HCNLO=HC_NLO_X0_UFO.zip
 HCNLOSOURCE=https://cms-project-generators.web.cern.ch/cms-project-generators/$HCNLO
 
 
-MGBASEDIRORIG=MG5_aMC_v2_2_2
+MGBASEDIRORIG=MG5_aMC_v2_2_3
 
 if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   #directory doesn't exist, create it and set up environment
