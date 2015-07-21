@@ -92,7 +92,7 @@ CARDSDIR=${PRODHOME}/${carddir}
 
 MGBASEDIR=mgbasedir
 
-MG=MG5_aMC_v2.3.0.beta.tar.gz
+MG=MG5_aMC_v2.3.0.tar.gz
 MGSOURCE=https://cms-project-generators.web.cern.ch/cms-project-generators/$MG
 
 #syscalc is a helper tool for madgraph to add scale and pdf variation weights for LO processes
@@ -128,7 +128,7 @@ SimplifiedVDMSOURCE=https://cms-project-generators.web.cern.ch/cms-project-gener
 TOP32MODEL=top32.tgz
 TOP32SOURCE=https://cms-project-generators.web.cern.ch/cms-project-generators/${TOP32MODEL}
 
-MGBASEDIRORIG=MG5_aMC_v2_3_0_beta
+MGBASEDIRORIG=MG5_aMC_v2_3_0
 
 isscratchspace=0
 
@@ -142,10 +142,10 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
   cd $AFS_GEN_FOLDER
 
 #   export SCRAM_ARCH=slc6_amd64_gcc472 #Here one should select the correct architechture corresponding with the CMSSW release
-#   export RELEASE=CMSSW_5_3_28
+#   export RELEASE=CMSSW_5_3_28_patch1
 
   export SCRAM_ARCH=slc6_amd64_gcc481
-  export RELEASE=CMSSW_7_1_16
+  export RELEASE=CMSSW_7_1_17
 
 
   ############################
@@ -208,9 +208,7 @@ if [ ! -d ${AFS_GEN_FOLDER}/${name}_gridpack ]; then
       echo "set cluster_status_update 60 30" >> mgconfigscript
       echo "set cluster_nb_retry 3" >> mgconfigscript
       echo "set cluster_retry_wait 300" >> mgconfigscript 
-#       echo "set cluster_retry_wait 30" >> mgconfigscript 
 #       echo "set cluster_local_path `${LHAPDFCONFIG} --datadir`" >> mgconfigscript 
-#       echo "set stdout_level DEBUG" >> mgconfigscript
       if [[ ! "$RUNHOME" =~ ^/afs/.* ]]; then
           echo "local path is not an afs path, batch jobs will use worker node scratch space instead of afs"
           echo "set cluster_temp_path `echo $RUNHOME`" >> mgconfigscript 
